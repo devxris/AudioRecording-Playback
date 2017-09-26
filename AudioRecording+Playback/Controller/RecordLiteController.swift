@@ -134,4 +134,12 @@ extension RecordLiteController: AVAudioRecorderDelegate {
 
 extension RecordLiteController: AVAudioPlayerDelegate {
 	
+	func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+		playButton.isSelected = false
+		if flag {
+			let alert = UIAlertController(title: "Finish Playing", message: "Finish playing the recording!", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+			present(alert, animated: true, completion: nil)
+		}
+	}
 }
