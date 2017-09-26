@@ -64,10 +64,31 @@ class RecordLiteController: UIViewController {
 		prepareAudioRecorder()
 	}
 	
-	@IBAction func play(_ sender: UIButton) {
+	@IBAction func record(_ sender: UIButton) {
+		// Stop the audio player before recording
+		if let player = audioPlayer, player.isPlaying { player.stop() }
+		guard let recorder = audioRecorder else { return }
+		if !recorder.isRecording {
+			let audioSession = AVAudioSession.sharedInstance()
+			do {
+				// set audioSession to active
+				try audioSession.setActive(true) // a must do trick
+				// start recording
+				recorder.record()
+				// set recordButton to pauseButton
+				recordButton.setImage(#imageLiteral(resourceName: "Pause"), for: .normal)
+			} catch {
+				print(error)
+			}
+		} else {
+			recorder.pause()
+			recordButton.setImage(#imageLiteral(resourceName: "Record"), for: .normal)
+		}
+		stopbutton.isEnabled = true
+		playButton.isEnabled = false
 	}
 	
-	@IBAction func record(_ sender: UIButton) {
+	@IBAction func play(_ sender: UIButton) {
 	}
 	
 	@IBAction func stop(_ sender: UIButton) {
