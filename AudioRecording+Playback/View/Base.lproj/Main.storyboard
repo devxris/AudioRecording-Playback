@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Record Lite Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RecordLiteController" customModule="AudioRecording_Playback" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="I9g-x2-K7D">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record Lite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVv-3d-JeX">
+                                <rect key="frame" x="124.33333333333331" y="44" width="126.66666666666669" height="31.333333333333329"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f4U-x8-Mc0">
+                                <rect key="frame" x="28" y="161.33333333333337" width="318" height="228.66666666666663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLg-B4-wpT">
+                                        <rect key="frame" x="30" y="0.0" width="258" height="136.66666666666666"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="100"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wave" translatesAutoresizingMaskIntoConstraints="NO" id="LuX-H6-ucc">
+                                        <rect key="frame" x="0.0" y="136.66666666666666" width="318" height="92"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="72Y-aU-CLf">
+                                <rect key="frame" x="52" y="708" width="270" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmi-U3-AzD">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
+                                        <state key="normal" image="Play"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJu-wT-K10">
+                                        <rect key="frame" x="100" y="0.0" width="70" height="70"/>
+                                        <state key="normal" image="Record"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TC0-d7-0Dc">
+                                        <rect key="frame" x="220" y="0.0" width="50" height="70"/>
+                                        <state key="normal" image="Stop"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yVv-3d-JeX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4Iq-9M-49r"/>
+                            <constraint firstItem="I9g-x2-K7D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AYI-JQ-NVA"/>
+                            <constraint firstItem="yVv-3d-JeX" firstAttribute="centerX" secondItem="I9g-x2-K7D" secondAttribute="centerX" id="DX1-a8-n9C"/>
+                            <constraint firstItem="72Y-aU-CLf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M9w-KM-fEh"/>
+                            <constraint firstItem="f4U-x8-Mc0" firstAttribute="centerX" secondItem="yVv-3d-JeX" secondAttribute="centerX" id="X4u-sU-r07"/>
+                            <constraint firstAttribute="bottom" secondItem="I9g-x2-K7D" secondAttribute="bottom" id="hDf-Ce-ue9"/>
+                            <constraint firstItem="72Y-aU-CLf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="hOH-tJ-JxK"/>
+                            <constraint firstItem="72Y-aU-CLf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="j3j-nx-3bh"/>
+                            <constraint firstItem="I9g-x2-K7D" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tKm-ef-Zkl"/>
+                            <constraint firstItem="f4U-x8-Mc0" firstAttribute="top" secondItem="yVv-3d-JeX" secondAttribute="bottom" constant="86" id="uKI-l8-sBH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-204" y="119"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background" width="375" height="667"/>
+        <image name="Play" width="50" height="50"/>
+        <image name="Record" width="70" height="70"/>
+        <image name="Stop" width="50" height="50"/>
+        <image name="Wave" width="318" height="92"/>
+    </resources>
+</document>
