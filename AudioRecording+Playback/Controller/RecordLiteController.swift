@@ -88,11 +88,26 @@ class RecordLiteController: UIViewController {
 		playButton.isEnabled = false
 	}
 	
-	@IBAction func play(_ sender: UIButton) {
+	@IBAction func stop(_ sender: UIButton) {
+		recordButton.setImage(#imageLiteral(resourceName: "Record"), for: .normal)
+		recordButton.isEnabled = true
+		stopbutton.isEnabled = false
+		playButton.isEnabled = true
+		
+		// stop audioRecorder
+		audioRecorder?.stop()
+		// deactivate audioSession
+		let audioSession = AVAudioSession.sharedInstance()
+		do {
+			try audioSession.setActive(false)
+		} catch {
+			print(error)
+		}
 	}
 	
-	@IBAction func stop(_ sender: UIButton) {
+	@IBAction func play(_ sender: UIButton) {
 	}
+
 }
 
 extension RecordLiteController: AVAudioRecorderDelegate {
