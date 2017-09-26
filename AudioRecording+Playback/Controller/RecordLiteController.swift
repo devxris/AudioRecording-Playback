@@ -75,6 +75,7 @@ class RecordLiteController: UIViewController {
 				try audioSession.setActive(true) // a must do trick
 				// start recording
 				recorder.record()
+				startTimer()
 				// set recordButton to pauseButton
 				recordButton.setImage(#imageLiteral(resourceName: "Pause"), for: .normal)
 			} catch {
@@ -82,6 +83,7 @@ class RecordLiteController: UIViewController {
 			}
 		} else {
 			recorder.pause()
+			pauseTimer()
 			recordButton.setImage(#imageLiteral(resourceName: "Record"), for: .normal)
 		}
 		stopbutton.isEnabled = true
@@ -96,6 +98,7 @@ class RecordLiteController: UIViewController {
 		
 		// stop audioRecorder
 		audioRecorder?.stop()
+		resetTimer()
 		// deactivate audioSession
 		let audioSession = AVAudioSession.sharedInstance()
 		do {
@@ -113,6 +116,7 @@ class RecordLiteController: UIViewController {
 				audioPlayer = try AVAudioPlayer(contentsOf: recorder.url)
 				audioPlayer?.delegate = self
 				audioPlayer?.play()
+				startTimer()
 			} catch {
 				print(error)
 			}
@@ -162,6 +166,7 @@ extension RecordLiteController: AVAudioPlayerDelegate {
 	
 	func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
 		playButton.isSelected = false
+		resetTimer()
 		if flag {
 			let alert = UIAlertController(title: "Finish Playing", message: "Finish playing the recording!", preferredStyle: .alert)
 			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
