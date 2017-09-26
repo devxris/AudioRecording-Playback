@@ -119,6 +119,32 @@ class RecordLiteController: UIViewController {
 		}
 	}
 
+	// MARK: Timer Help function
+	private var timer: Timer?
+	private var elapsedTimeInSecond: Int = 0
+	
+	private func startTimer() {
+		timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self](timer) in
+			self?.elapsedTimeInSecond += 1
+			self?.updateTimeLabel()
+		})
+	}
+	
+	private func pauseTimer() {
+		timer?.invalidate()
+	}
+	
+	private func resetTimer() {
+		timer?.invalidate()
+		elapsedTimeInSecond = 0
+		updateTimeLabel()
+	}
+	
+	private func updateTimeLabel() {
+		let seconds = elapsedTimeInSecond % 60
+		let minutes = (elapsedTimeInSecond / 60) % 60
+		timeLabel.text = String(format: "%0.2d:%0.2d", minutes, seconds)
+	}
 }
 
 extension RecordLiteController: AVAudioRecorderDelegate {
