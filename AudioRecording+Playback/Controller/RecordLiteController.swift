@@ -112,5 +112,11 @@ class RecordLiteController: UIViewController {
 
 extension RecordLiteController: AVAudioRecorderDelegate {
 	
+	func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+		if flag {
+			let alert = UIAlertController(title: "Finish Recording", message: "Successfully recorded the audio!", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+			present(alert, animated: true, completion: nil)
+		}
+	}
 }
-
