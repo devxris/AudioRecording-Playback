@@ -106,6 +106,17 @@ class RecordLiteController: UIViewController {
 	}
 	
 	@IBAction func play(_ sender: UIButton) {
+		guard let recorder = audioRecorder else { return }
+		if !recorder.isRecording {
+			do {
+				// play audio from reocrder's url
+				audioPlayer = try AVAudioPlayer(contentsOf: recorder.url)
+				audioPlayer?.delegate = self
+				audioPlayer?.play()
+			} catch {
+				print(error)
+			}
+		}
 	}
 
 }
@@ -119,4 +130,8 @@ extension RecordLiteController: AVAudioRecorderDelegate {
 			present(alert, animated: true, completion: nil)
 		}
 	}
+}
+
+extension RecordLiteController: AVAudioPlayerDelegate {
+	
 }
