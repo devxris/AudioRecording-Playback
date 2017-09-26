@@ -51,14 +51,23 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmi-U3-AzD">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
                                         <state key="normal" image="Play"/>
+                                        <connections>
+                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fug-zH-uJh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJu-wT-K10">
                                         <rect key="frame" x="100" y="0.0" width="70" height="70"/>
                                         <state key="normal" image="Record"/>
+                                        <connections>
+                                            <action selector="record:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7xM-Mf-ccz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TC0-d7-0Dc">
                                         <rect key="frame" x="220" y="0.0" width="50" height="70"/>
                                         <state key="normal" image="Stop"/>
+                                        <connections>
+                                            <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gye-UO-bpF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -78,6 +87,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playButton" destination="Pmi-U3-AzD" id="6On-ZO-D0O"/>
+                        <outlet property="recordButton" destination="QJu-wT-K10" id="8z5-0c-wzB"/>
+                        <outlet property="stopbutton" destination="TC0-d7-0Dc" id="4Rm-B1-1tB"/>
+                        <outlet property="timeLabel" destination="mLg-B4-wpT" id="phv-Mp-d9K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
